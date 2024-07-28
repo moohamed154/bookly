@@ -9,8 +9,6 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
-        left: 24,
-        right: 24,
         top: 50,
         bottom: 20,
       ),
@@ -25,6 +23,7 @@ class CustomAppBar extends StatelessWidget {
             onPressed: () {},
             icon: const Icon(
               FontAwesomeIcons.magnifyingGlass,
+              color: Colors.white,
               size: 24,
             ),
           ),
