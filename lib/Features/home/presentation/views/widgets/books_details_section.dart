@@ -1,6 +1,6 @@
 import 'package:bookly_app/Features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/Features/home/presentation/views/widgets/books_action.dart';
-import 'package:bookly_app/Features/home/presentation/views/widgets/custom_book_item.dart';
+import 'package:bookly_app/Features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +17,9 @@ class BookDetailsSection extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             horizontal: width * 0.2,
           ),
-          child: const CustomBookImage(),
+          child: const CustomBookImage(
+            imageUrl: 'https://via.placeholder.com/150',
+          ),
         ),
         const SizedBox(
           height: 43,

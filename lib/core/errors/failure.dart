@@ -29,7 +29,7 @@ class ServerFailure extends Failure {
         if (dioException.message?.contains('SocketException') ?? false) {
           return ServerFailure('No Internet Connection');
         }
-        return ServerFailure('Unknown Error');
+        return ServerFailure('Server Error, Please try again later');
       default:
         return ServerFailure(
             'Unhandled DioExceptionType: ${dioException.type}');
@@ -38,7 +38,7 @@ class ServerFailure extends Failure {
 
   factory ServerFailure.fromResponse(int? statusCode, dynamic response) {
     if (statusCode == null) {
-      return ServerFailure('Unknown Error');
+      return ServerFailure('Server Error, Please try again later');
     } else if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
       return ServerFailure(response['error']['message']);
     } else if (statusCode == 404) {
@@ -46,7 +46,7 @@ class ServerFailure extends Failure {
     } else if (statusCode == 500) {
       return ServerFailure('Internal Server Error');
     } else {
-      return ServerFailure('Unknown Error');
+      return ServerFailure('Server Error, Please try again later');
     }
   }
 }
